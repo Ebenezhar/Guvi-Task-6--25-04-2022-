@@ -1,0 +1,44 @@
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+let a = [];
+inp.on("line", (data) => {
+  a.push(data);
+ 
+  //Input process
+   
+});
+
+inp.on("close", () => {
+
+let b = "";
+let c = "";
+let d=0;
+let e  = [];
+b=a[0].split(" ");
+c=parseInt(a[1].split(" "));
+
+for(let i=0;i<b; i++)
+{
+for( let j=0; j<b; j++)
+{
+let x = c[i]/c[j];
+if (x==1)
+{
+d=d+1;
+}
+if (d>1)
+{
+for ( let k=0; k<=b; k++)
+{
+e[k] = a[i];
+}
+}
+}
+}
+console.log(e)
+
+});
