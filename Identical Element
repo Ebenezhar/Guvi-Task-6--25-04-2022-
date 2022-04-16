@@ -1,4 +1,4 @@
-// Getting input via STDIN
+/ / Getting input via STDIN
 const readline = require("readline");
 
 const inp = readline.createInterface({
@@ -14,31 +14,35 @@ inp.on("line", (data) => {
 
 inp.on("close", () => {
 
-let b = "";
-let c = "";
-let d=0;
-let e  = [];
-b=a[0].split(" ");
-c=parseInt(a[1].split(" "));
+let b=parseInt(a[0]);
+let c="";
+c=a[1].split(" ").map(Number);
+console.log(c);
+let result=[];
+let fin=[];
+for(let i=0;i<b;i++)
+{
+ for(let j=0;j<b;j++)
+ {
+ if(c[i]==c[j] && i!=j)
+ {
+    result.push(c[i]);
+    c.splice(j,1);
+ }
+ }
+}
+console.log(result);
+if(result.length==0)
+  console.log("-1");
+else{
+for(let k=0;k<result.length;k++)
+{
+  if(result[k]!=undefined)
+      //fin.push(result[k]);
+      console.log(result[k]);
+}
 
-for(let i=0;i<b; i++)
-{
-for( let j=0; j<b; j++)
-{
-let x = c[i]/c[j];
-if (x==1)
-{
-d=d+1;
 }
-if (d>1)
-{
-for ( let k=0; k<=b; k++)
-{
-e[k] = a[i];
-}
-}
-}
-}
-console.log(e)
+
 
 });
